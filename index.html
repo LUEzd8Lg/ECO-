@@ -1,22 +1,417 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="Description">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECO基金会指挥中心</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <div id="app"></div>
-  <script>
-    window.$docsify = {
-      name: '',
-      repo: ''
-    }
-  </script>
-  <!-- Docsify v4 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+<body class="bg-darker text-light font-mono min-h-screen flex flex-col overflow-hidden">
+  <div class="scanline"></div>
+  <!-- 导航栏 -->
+  <header class="navbar fixed w-full z-50">
+    <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <div class="w-8 h-8 rounded-sm bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center shadow-lg shadow-green-500/30 border border-green-500/50">
+          <i class="fas fa-shield-alt text-black text-sm"></i>
+        </div>
+        <h1 class="text-xl font-bold text-green-500 tracking-wider">ECO基金会指挥中心</h1>
+      </div>
+      <div class="hidden md:flex items-center space-x-4 text-sm">
+        <a href="#dashboard" class="text-green-300 hover:text-green-500 transition-colors duration-300 px-2 py-1 border border-green-500/30 hover:bg-green-900/30 rounded">
+          首页
+        </a>
+        <a href="#structure" class="text-green-300 hover:text-green-500 transition-colors duration-300 px-2 py-1 border border-green-500/30 hover:bg-green-900/30 rounded">
+          组织结构
+        </a>
+        <a href="#employees" class="text-green-300 hover:text-green-500 transition-colors duration-300 px-2 py-1 border border-green-500/30 hover:bg-green-900/30 rounded">
+          员工系统
+        </a>
+        <a href="#projects" class="text-green-300 hover:text-green-500 transition-colors duration-300 px-2 py-1 border border-green-500/30 hover:bg-green-900/30 rounded">
+          研究项目
+        </a>
+        <a href="#emergency" class="text-green-300 hover:text-green-500 transition-colors duration-300 px-2 py-1 border border-green-500/30 hover:bg-green-900/30 rounded">
+          紧急协议
+        </a>
+        <a href="#collection" class="text-green-300 hover:text-green-500 transition-colors duration-300 px-2 py-1 bg-green-900/50 border border-green-500 rounded">
+          收容物管理
+        </a>
+      </div>
+      <div class="text-right text-xs text-green-400 bg-gray-900 px-2 py-1 border border-green-500/30 rounded">
+        <div>系统状态: <span class="text-green-500"><i class="fas fa-check-circle"></i> 在线</span></div>
+        <div>授权等级: <span class="text-yellow-400">4级</span></div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 主内容区 -->
+  <main class="pt-16 flex-grow overflow-y-auto grid-bg">
+    <!-- 数据统计区 -->
+    <section class="py-6 px-4 border-b border-primary/30 bg-dark/70">
+      <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="stat-card pulse-animation">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="stat-label">已收容实体</h3>
+            <i class="fas fa-cube text-green-500/50"></i>
+          </div>
+          <p class="stat-value glow-text" id="creature-count">0</p>
+          <p class="text-xs text-green-400/60 mt-1"><i class="fas fa-arrow-up mr-1"></i>较上周增长 8.2%</p>
+        </div>
+        <div class="stat-card pulse-animation">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="stat-label">Threat实体</h3>
+            <i class="fas fa-skull text-red-500/50"></i>
+          </div>
+          <p class="stat-value glow-text text-red-400">17</p>
+          <p class="text-xs text-red-400/60 mt-1"><i class="fas fa-arrow-up mr-1"></i>较上周增长 2.1%</p>
+        </div>
+        <div class="stat-card pulse-animation">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="stat-label">在职员工</h3>
+            <i class="fas fa-users text-yellow-500/50"></i>
+          </div>
+          <p class="stat-value glow-text text-yellow-400">5,892</p>
+          <p class="text-xs text-yellow-400/60 mt-1"><i class="fas fa-arrow-up mr-1"></i>较上周增长 1.3%</p>
+        </div>
+        <div class="stat-card pulse-animation">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="stat-label">收容成功率</h3>
+            <i class="fas fa-shield-alt text-blue-500/50"></i>
+          </div>
+          <p class="stat-value glow-text text-blue-400">98.7%</p>
+          <p class="text-xs text-blue-400/60 mt-1"><i class="fas fa-arrow-up mr-1"></i>较上周增长 0.3%</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 警报区域 -->
+    <section class="py-4 px-4">
+      <div class="container mx-auto">
+        <div class="alert-container flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center border border-red-500/50 flex-shrink-0 animate-pulse">
+            <i class="fas fa-exclamation-triangle text-red-500"></i>
+          </div>
+          <div class="flex-grow">
+            <h3 class="alert-title"><i class="fas fa-alarm-clock mr-2"></i>紧急警告</h3>
+            <p class="alert-content">基金会编号: E-001 (《之上》) 的种子现已异常活化，所有相关站点已进入三级戒备状态</p>
+          </div>
+          <button class="text-red-400 hover:text-red-300"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 主要内容区 -->
+    <section class="py-4 px-4">
+      <div class="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- 左侧面板 -->
+        <div class="lg:col-span-2 space-y-6">
+          <!-- 最近活动 -->
+          <div class="bg-dark/80 border border-primary/30 rounded-lg p-4 backdrop-blur-sm tech-border">
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="text-lg font-bold text-primary flex items-center glow-text"><i class="fas fa-history mr-2"></i>最近活动</h3>
+              <button class="text-green-400 hover:text-green-300 text-sm flex items-center"><i class="fas fa-ellipsis-v"></i></button>
+            </div>
+            <div class="space-y-4 max-h-80 overflow-y-auto pr-2 custom-scrollbar">
+              <div class="p-3 border border-green-500/20 rounded-md bg-gray-900/50 hover:border-green-500/40 transition-colors duration-300">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="text-xs text-green-400/70">2025-08-14 12:22</span>
+                  <span class="text-xs px-2 py-0.5 bg-green-900/50 text-green-400 rounded border border-green-500/30">收容成功</span>
+                </div>
+                <p class="text-sm">RK行动部署S13-01成功收容E-117 (量子幽灵)</p>
+              </div>
+              <div class="p-3 border border-blue-500/20 rounded-md bg-gray-900/50 hover:border-blue-500/40 transition-colors duration-300">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="text-xs text-blue-400/70">2025-08-13 21:15</span>
+                  <span class="text-xs px-2 py-0.5 bg-blue-900/50 text-blue-400 rounded border border-blue-500/30">研究进展</span>
+                </div>
+                <p class="text-sm">R&D部门完成S19-6e的安全升级</p>
+              </div>
+              <div class="p-3 border border-yellow-500/20 rounded-md bg-gray-900/50 hover:border-yellow-500/40 transition-colors duration-300">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="text-xs text-yellow-400/70">2025-08-12 09:47</span>
+                  <span class="text-xs px-2 py-0.5 bg-yellow-900/50 text-yellow-400 rounded border border-yellow-500/30">设备测试</span>
+                </div>
+                <p class="text-sm">战术部新研发的重型认知屏障通过测试</p>
+              </div>
+              <div class="p-3 border border-purple-500/20 rounded-md bg-gray-900/50 hover:border-purple-500/40 transition-colors duration-300">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="text-xs text-purple-400/70">2025-08-11 17:30</span>
+                  <span class="text-xs px-2 py-0.5 bg-purple-900/50 text-purple-400 rounded border border-purple-500/30">报告提交</span>
+                </div>
+                <p class="text-sm">YJ研究员发布年度异常事件评估报告</p>
+              </div>
+              <div class="p-3 border border-red-500/20 rounded-md bg-gray-900/50 hover:border-red-500/40 transition-colors duration-300">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="text-xs text-red-400/70">2025-08-10 11:05</span>
+                  <span class="text-xs px-2 py-0.5 bg-red-900/50 text-red-400 rounded border border-red-500/30">安全警报</span>
+                </div>
+                <p class="text-sm">E-001 (《之上》) 的种子被证实突破安全阈值</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 收容档案区 -->
+          <div class="bg-dark/80 border border-primary/30 rounded-lg p-4 backdrop-blur-sm tech-border" id="collection">
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="text-lg font-bold text-primary flex items-center glow-text"><i class="fas fa-archive mr-2"></i>收容档案</h3>
+              <div class="flex items-center space-x-2">
+                <div class="relative">
+                  <input type="text" placeholder="搜索实体..." class="bg-gray-900/70 border border-green-500/30 rounded px-3 py-1.5 pl-8 text-xs focus:outline-none focus:border-green-500 transition-colors w-36 md:w-48">
+                  <i class="fas fa-search absolute left-2.5 top-1/2 -translate-y-1/2 text-green-500/50 text-xs"></i>
+                </div>
+                <select class="bg-gray-900/70 border border-green-500/30 rounded px-3 py-1.5 text-xs focus:outline-none focus:border-green-500 transition-colors" id="classification-filter">
+                  <option value="all">全部等级</option>
+                  <option value="ECO-Safe">ECO-Safe (绿色)</option>
+                  <option value="ECO-Neutral">ECO-Neutral (黄色)</option>
+                  <option value="ECO-Hazard">ECO-Hazard (红色)</option>
+                  <option value="ECO-Threat">ECO-Threat (紫色)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- 生物卡片网格 -->
+            <div id="creature-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
+              <!-- 卡片将通过JavaScript动态生成 -->
+              <div class="col-span-full text-center py-12 border-2 border-dashed border-green-500/30 rounded-lg bg-gray-900/50">
+                <div class="w-12 h-12 mx-auto rounded-full bg-gray-800 flex items-center justify-center mb-3 border border-green-500/20">
+                  <i class="fas fa-file-medical-alt text-green-500/50 text-lg"></i>
+                </div>
+                <h3 class="text-lg font-medium text-green-400/70 mb-2">暂无收容实体</h3>
+                <p class="text-xs text-green-400/50 mb-3">记录你的第一个异常生物发现</p>
+                <a href="#add" class="inline-flex items-center px-3 py-1.5 bg-green-900/50 border border-green-500/50 hover:border-green-500 rounded text-green-400 text-xs transition-colors">
+                  <i class="fas fa-plus mr-1.5"></i> 记录新发现
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右侧面板 -->
+        <div class="space-y-6">
+          <!-- 高风险实体 -->
+          <div class="bg-dark/80 border border-red-500/30 rounded-lg p-4 backdrop-blur-sm tech-border">
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="text-lg font-bold text-red-400 flex items-center glow-text"><i class="fas fa-exclamation-circle mr-2"></i>高风险实体</h3>
+              <span class="text-xs px-2 py-0.5 bg-red-900/50 text-red-400 rounded border border-red-500/30">5个活跃</span>
+            </div>
+            <div class="space-y-3 max-h-[280px] overflow-y-auto pr-2 custom-scrollbar">
+              <div class="p-3 border border-red-500/20 rounded-md bg-gray-900/50 hover:border-red-500/40 transition-colors duration-300 flex items-center justify-between group">
+                <div class="flex items-center">
+                  <div class="w-8 h-8 bg-red-900/30 rounded-md flex items-center justify-center border border-red-500/30 flex-shrink-0 mr-3">
+                    <i class="fas fa-cube text-red-500/70 text-xs"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-sm font-medium text-red-400">E-001 之上</h4>
+                    <div class="flex space-x-1 mt-1">
+                      <span class="text-xs px-1.5 py-0.25 bg-red-900/30 text-red-400 rounded border border-red-500/30">Threat</span>
+                      <span class="text-xs px-1.5 py-0.25 bg-red-900/30 text-red-400 rounded border border-red-500/30">RK</span>
+                      <span class="text-xs px-1.5 py-0.25 bg-red-900/30 text-red-400 rounded border border-red-500/30">E5级</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="text-red-400/50 hover:text-red-400 transition-colors duration-300 group-hover:text-red-400">
+                  <i class="fas fa-chevron-right text-xs"></i>
+                </button>
+              </div>
+              <div class="p-3 border border-purple-500/20 rounded-md bg-gray-900/50 hover:border-purple-500/40 transition-colors duration-300 flex items-center justify-between group">
+                <div class="flex items-center">
+                  <div class="w-8 h-8 bg-purple-900/30 rounded-md flex items-center justify-center border border-purple-500/30 flex-shrink-0 mr-3">
+                    <i class="fas fa-ghost text-purple-500/70 text-xs"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-sm font-medium text-purple-400">E-013 虚灵之眼</h4>
+                    <div class="flex space-x-1 mt-1">
+                      <span class="text-xs px-1.5 py-0.25 bg-purple-900/30 text-purple-400 rounded border border-purple-500/30">Shielded</span>
+                      <span class="text-xs px-1.5 py-0.25 bg-purple-900/30 text-purple-400 rounded border border-purple-500/30">AQ</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="text-purple-400/50 hover:text-purple-400 transition-colors duration-300 group-hover:text-purple-400">
+                  <i class="fas fa-chevron-right text-xs"></i>
+                </button>
+              </div>
+              <div class="p-3 border border-red-500/20 rounded-md bg-gray-900/50 hover:border-red-500/40 transition-colors duration-300 flex items-center justify-between group">
+                <div class="flex items-center">
+                  <div class="w-8 h-8 bg-red-900/30 rounded-md flex items-center justify-center border border-red-500/30 flex-shrink-0 mr-3">
+                    <i class="fas fa-dream text-red-500/70 text-xs"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-sm font-medium text-red-400">E-099 域外梦</h4>
+                    <div class="flex space-x-1 mt-1">
+                      <span class="text-xs px-1.5 py-0.25 bg-red-900/30 text-red-400 rounded border border-red-500/30">Threat</span>
+                      <span class="text-xs px-1.5 py-0.25 bg-red-900/30 text-red-400 rounded border border-red-500/30">RK</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="text-red-400/50 hover:text-red-400 transition-colors duration-300 group-hover:text-red-400">
+                  <i class="fas fa-chevron-right text-xs"></i>
+                </button>
+              </div>
+              <div class="p-3 border border-yellow-500/20 rounded-md bg-gray-900/50 hover:border-yellow-500/40 transition-colors duration-300 flex items-center justify-between group">
+                <div class="flex items-center">
+                  <div class="w-8 h-8 bg-yellow-900/30 rounded-md flex items-center justify-center border border-yellow-500/30 flex-shrink-0 mr-3">
+                    <i class="fas fa-bolt text-yellow-500/70 text-xs"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-sm font-medium text-yellow-400">E-077 时空等价</h4>
+                    <div class="flex space-x-1 mt-1">
+                      <span class="text-xs px-1.5 py-0.25 bg-yellow-900/30 text-yellow-400 rounded border border-yellow-500/30">Hazard</span>
+                      <span class="text-xs px-1.5 py-0.25 bg-yellow-900/30 text-yellow-400 rounded border border-yellow-500/30">AQ</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="text-yellow-400/50 hover:text-yellow-400 transition-colors duration-300 group-hover:text-yellow-400">
+                  <i class="fas fa-chevron-right text-xs"></i>
+                </button>
+              </div>
+              <div class="p-3 border border-blue-500/20 rounded-md bg-gray-900/50 hover:border-blue-500/40 transition-colors duration-300 flex items-center justify-between group">
+                <div class="flex items-center">
+                  <div class="w-8 h-8 bg-blue-900/30 rounded-md flex items-center justify-center border border-blue-500/30 flex-shrink-0 mr-3">
+                    <i class="fas fa-clock text-blue-500/70 text-xs"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-sm font-medium text-blue-400">E-007 时之沙</h4>
+                    <div class="flex space-x-1 mt-1">
+                      <span class="text-xs px-1.5 py-0.25 bg-blue-900/30 text-blue-400 rounded border border-blue-500/30">Neutral</span>
+                      <span class="text-xs px-1.5 py-0.25 bg-blue-900/30 text-blue-400 rounded border border-blue-500/30">研究中</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="text-blue-400/50 hover:text-blue-400 transition-colors duration-300 group-hover:text-blue-400">
+                  <i class="fas fa-chevron-right text-xs"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 组织结构 -->
+          <div class="bg-gray-900/80 border border-green-500/30 rounded-lg p-4 backdrop-blur-sm">
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="text-lg font-bold text-green-500 flex items-center"><i class="fas fa-sitemap mr-2"></i>组织结构</h3>
+              <button class="text-green-400 hover:text-green-300 text-sm flex items-center">查看完整结构 <i class="fas fa-chevron-right ml-1 text-xs"></i></button>
+            </div>
+            <div class="space-y-3 max-h-[240px] overflow-y-auto pr-2 custom-scrollbar">
+              <div class="p-3 border border-green-500/20 rounded-md bg-gray-900/50 hover:border-green-500/40 transition-colors duration-300">
+                <h4 class="text-sm font-medium text-green-400">异常生物收容部</h4>
+                <p class="text-xs text-green-400/70 mt-1">负责异常生物实体的捕捉、分类与收容</p>
+              </div>
+              <div class="p-3 border border-blue-500/20 rounded-md bg-gray-900/50 hover:border-blue-500/40 transition-colors duration-300 ml-4">
+                <h4 class="text-sm font-medium text-blue-400">特殊收容小组</h4>
+              </div>
+              <div class="p-3 border border-blue-500/20 rounded-md bg-gray-900/50 hover:border-blue-500/40 transition-colors duration-300 ml-4">
+                <h4 class="text-sm font-medium text-blue-400">收容设施管理</h4>
+              </div>
+              <div class="p-3 border border-green-500/20 rounded-md bg-gray-900/50 hover:border-green-500/40 transition-colors duration-300">
+                <h4 class="text-sm font-medium text-green-400">研究与开发部</h4>
+                <p class="text-xs text-green-400/70 mt-1">负责异常生物特性研究与收容技术开发</p>
+              </div>
+              <div class="p-3 border border-green-500/20 rounded-md bg-gray-900/50 hover:border-green-500/40 transition-colors duration-300">
+                <h4 class="text-sm font-medium text-green-400">安全与战术部</h4>
+                <p class="text-xs text-green-400/70 mt-1">负责基金会人员安全与应急响应</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 添加生物区 -->
+    <section id="add" class="py-6 px-4 bg-gray-900/80 border-t border-green-500/30 mt-6">
+      <div class="container mx-auto max-w-2xl">
+        <h2 class="text-lg font-bold mb-4 flex items-center text-green-500">
+          <span class="w-6 h-6 rounded bg-green-500/20 flex items-center justify-center mr-2 border border-green-500/30">
+            <i class="fas fa-file-medical-alt text-green-500 text-xs"></i>
+          </span>
+          记录新收容实体
+        </h2>
+
+        <form id="creature-form" class="space-y-4 bg-gray-900/50 p-4 rounded-lg border border-green-500/30">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="space-y-1.5">
+              <label for="name" class="block text-xs font-medium text-green-400/80">实体名称</label>
+              <input type="text" id="name" name="name" required class="w-full px-3 py-1.5 bg-gray-900 border border-green-500/30 rounded text-sm focus:outline-none focus:border-green-500 transition-colors">
+            </div>
+            <div class="space-y-1.5">
+              <label for="category" class="block text-xs font-medium text-green-400/80">收容等级</label>
+              <select id="category" name="category" required class="w-full px-3 py-1.5 bg-gray-900 border border-green-500/30 rounded text-sm focus:outline-none focus:border-green-500 transition-colors">
+                <option value="">选择收容等级</option>
+                <option value="ECO-Safe">ECO-Safe (绿色安全无害)</option>
+                <option value="ECO-Neutral">ECO-Neutral (黄色重大变故)</option>
+                <option value="ECO-Hazard">ECO-Hazard (红色移动天灾)</option>
+                <option value="ECO-Threat">ECO-Threat (紫色末日降临)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="space-y-1.5">
+            <label for="description" class="block text-xs font-medium text-green-400/80">实体描述</label>
+            <textarea id="description" name="description" rows="3" required class="w-full px-3 py-1.5 bg-gray-900 border border-green-500/30 rounded text-sm focus:outline-none focus:border-green-500 transition-colors"></textarea>
+          </div>
+
+          <div class="space-y-1.5">
+            <label for="image" class="block text-xs font-medium text-green-400/80">实体影像URL</label>
+            <input type="url" id="image" name="image" placeholder="https://..." class="w-full px-3 py-1.5 bg-gray-900 border border-green-500/30 rounded text-sm focus:outline-none focus:border-green-500 transition-colors">
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="space-y-1.5">
+              <label for="habitat" class="block text-xs font-medium text-green-400/80">发现地点</label>
+              <input type="text" id="habitat" name="habitat" class="w-full px-3 py-1.5 bg-gray-900 border border-green-500/30 rounded text-sm focus:outline-none focus:border-green-500 transition-colors">
+            </div>
+            <div class="space-y-1.5">
+              <label for="abilities" class="block text-xs font-medium text-green-400/80">异常特性</label>
+              <input type="text" id="abilities" name="abilities" class="w-full px-3 py-1.5 bg-gray-900 border border-green-500/30 rounded text-sm focus:outline-none focus:border-green-500 transition-colors">
+            </div>
+          </div>
+
+          <div class="flex justify-end space-x-3 pt-2">
+            <button type="button" class="px-4 py-1.5 border border-green-500/30 rounded text-green-400/80 hover:bg-green-900/20 transition-colors text-sm">取消</button>
+            <button type="submit" class="px-5 py-1.5 bg-green-900/50 border border-green-500 rounded text-green-400 hover:bg-green-900/70 transition-all shadow-lg shadow-green-500/10 text-sm">记录收容</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="py-8 border-t border-gray-800 bg-gray-900 mt-auto">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="flex items-center space-x-2 mb-4 md:mb-0">
+          <div class="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/20 border border-cyan-500/50">
+            <i class="fas fa-shield-alt text-white text-sm"></i>
+          </div>
+          <span class="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">ECO基金会</span>
+        </div>
+        <div class="flex space-x-6 mb-4 md:mb-0">
+          <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors"><i class="fab fa-github"></i></a>
+          <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="text-gray-500 text-sm">
+          &copy; 2023 ECO基金会. 保护人类与生态系统的安全.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 生物详情模态框 -->
+  <div id="creature-modal" class="fixed inset-0 z-50 hidden overflow-auto">
+    <div class="flex items-center justify-center min-h-screen px-4">
+      <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+      <div class="relative bg-gray-800 rounded-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-white z-10">
+          <i class="fas fa-times text-xl"></i>
+        </button>
+        <div id="modal-content" class="p-6">
+          <!-- 模态框内容将通过JavaScript动态生成 -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
 </body>
 </html>

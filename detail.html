@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECO基金会 | 异常生物详情</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fadeIn {
+      animation: fadeIn 0.5s ease forwards;
+    }
+
+    .float-animation {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+  </style>
+</head>
+<body class="bg-darker text-light font-mono min-h-screen flex flex-col opacity-0 transition-opacity duration-700">
+  <div class="scanline"></div>
+  <!-- 导航栏 -->
+  <header class="navbar fixed w-full z-50">
+    <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <div class="w-10 h-10 rounded-sm bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg shadow-primary/30 border border-primary/50">
+          <i class="fas fa-shield-alt text-white text-xl"></i>
+        </div>
+        <h1 class="text-2xl font-bold text-primary glow-text">ECO基金会</h1>
+      </div>
+      <div class="hidden md:flex items-center space-x-6">
+        <a href="index.html#collection" class="nav-link flex items-center">
+          <i class="fas fa-archive mr-2"></i>收容档案
+        </a>
+        <a href="index.html#discover" class="nav-link flex items-center">
+          <i class="fas fa-search-plus mr-2"></i>异常调查
+        </a>
+        <a href="index.html#add" class="nav-link flex items-center">
+          <i class="fas fa-file-medical-alt mr-2"></i>记录新发现
+        </a>
+      </div>
+      <button class="md:hidden text-light hover:text-primary" id="mobile-menu-button">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </nav>
+    <!-- 移动菜单 -->
+    <div class="md:hidden hidden bg-dark border-t border-primary/20" id="mobile-menu">
+      <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+        <a href="index.html#collection" class="text-light hover:text-primary py-2 transition-colors duration-300 flex items-center">
+          <i class="fas fa-archive mr-2"></i>收容档案
+        </a>
+        <a href="index.html#discover" class="text-light hover:text-primary py-2 transition-colors duration-300 flex items-center">
+          <i class="fas fa-search-plus mr-2"></i>异常调查
+        </a>
+        <a href="index.html#add" class="text-light hover:text-primary py-2 transition-colors duration-300 flex items-center">
+          <i class="fas fa-file-medical-alt mr-2"></i>记录新发现
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主要内容区 -->
+  <main class="container mx-auto px-4 py-24 flex-grow grid-bg">
+    <div id="creature-details" class="max-w-4xl mx-auto bg-dark/80 rounded-lg shadow-xl overflow-hidden border border-primary/30 tech-border">
+      <!-- 加载指示器 -->
+      <div id="loading" class="py-20 text-center">
+        <div class="loader mx-auto mb-4"></div>
+        <p class="text-gray-400 pulse-animation">正在加载收容实体数据...</p>
+      </div>
+
+      <!-- 详情内容 (由JavaScript动态生成) -->
+      <div id="details-content" class="hidden"></div>
+    </div>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="py-8 border-t border-gray-800 bg-dark mt-auto">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="flex items-center space-x-2 mb-4 md:mb-0">
+          <div class="w-8 h-8 rounded-sm bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg shadow-primary/20 border border-primary/50">
+            <i class="fas fa-shield-alt text-white text-sm"></i>
+          </div>
+          <span class="text-lg font-bold text-primary glow-text">ECO基金会</span>
+        </div>
+        <div class="flex space-x-6 mb-4 md:mb-0">
+          <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors"><i class="fab fa-github"></i></a>
+          <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="text-gray-500 text-sm">
+          &copy; 2023 ECO基金会. 保护人类与生态系统的安全.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/detail.js"></script>
+</body>
+</html>

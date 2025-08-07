@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECO基金会 - 组织结构</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col grid-bg">
+    <!-- 扫描线效果 -->
+    <div class="scanline"></div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar fixed w-full top-0 z-50 px-4 py-3 flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/20 border border-cyan-500/50">
+                <i class="fas fa-shield-alt text-white text-sm"></i>
+            </div>
+            <span class="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">ECO基金会</span>
+        </div>
+        <div class="hidden md:flex items-center space-x-6">
+            <a href="index.html" class="nav-link flex items-center"><i class="fas fa-home mr-1.5"></i> 首页</a>
+            <a href="organization.html" class="nav-link flex items-center text-green-400"><i class="fas fa-sitemap mr-1.5"></i> 组织结构</a>
+            <a href="employees.html" class="nav-link flex items-center"><i class="fas fa-users mr-1.5"></i> 员工系统</a>
+            <a href="projects.html" class="nav-link flex items-center"><i class="fas fa-flask mr-1.5"></i> 研究项目</a>
+            <a href="protocols.html" class="nav-link flex items-center"><i class="fas fa-exclamation-triangle mr-1.5"></i> 紧急协议</a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <button class="bg-green-900/50 border border-green-500/50 rounded px-3 py-1 text-sm text-green-400 hover:bg-green-900/70 transition-colors flex items-center"><i class="fas fa-user-shield mr-1.5"></i> 4级权限</button>
+            <button class="md:hidden text-gray-300 hover:text-white"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- 主内容区 -->
+    <main class="flex-grow pt-24 pb-10 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <!-- 页面标题 -->
+            <h1 class="text-2xl md:text-3xl font-bold mb-6 animated-title flex items-center"><i class="fas fa-sitemap mr-2 text-green-500"></i> ECO基金会组织结构</h1>
+
+            <!-- 警报区域 -->
+            <div class="alert-container mb-8">
+                <div class="alert-title"><i class="fas fa-exclamation-circle"></i> 安全警告</div>
+                <div class="alert-content">
+                    本页面包含ECO基金会内部组织结构信息，仅限4级及以上权限人员访问。未经授权访问将触发安全协议。
+                </div>
+            </div>
+
+            <!-- 组织结构图表 -->
+            <div class="bg-gray-900/80 border border-green-500/30 rounded-lg p-6 mb-8 backdrop-blur-sm tech-border">
+                <h2 class="text-lg font-bold mb-4 text-green-500 flex items-center"><i class="fas fa-project-diagram mr-2"></i> 基金会架构图</h2>
+                <div class="flex justify-center mb-6">
+                    <div class="w-full max-w-3xl bg-gray-900/50 p-4 rounded border border-green-500/20">
+                        <!-- 组织结构图 - 使用简单的div布局表示 -->
+                        <div class="flex flex-col items-center">
+                            <div class="p-4 bg-green-900/30 border border-green-500/30 rounded-md mb-4 w-64 text-center hover-lift">
+                                <h3 class="text-green-400 font-bold">O5议会</h3>
+                                <p class="text-xs text-green-400/70 mt-1">基金会最高决策机构</p>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4 w-full">
+                                <div class="p-3 bg-blue-900/30 border border-blue-500/30 rounded-md text-center hover-lift">
+                                    <h4 class="text-blue-400 font-medium">异常生物收容部</h4>
+                                </div>
+                                <div class="p-3 bg-purple-900/30 border border-purple-500/30 rounded-md text-center hover-lift">
+                                    <h4 class="text-purple-400 font-medium">研究与开发部</h4>
+                                </div>
+                                <div class="p-3 bg-red-900/30 border border-red-500/30 rounded-md text-center hover-lift">
+                                    <h4 class="text-red-400 font-medium">安全与战术部</h4>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+                                <div class="p-3 bg-yellow-900/30 border border-yellow-500/30 rounded-md text-center hover-lift">
+                                    <h4 class="text-yellow-400 font-medium">行政与后勤保障部</h4>
+                                </div>
+                                <div class="p-3 bg-cyan-900/30 border border-cyan-500/30 rounded-md text-center hover-lift">
+                                    <h4 class="text-cyan-400 font-medium">信息与情报部</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 部门职责说明 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <!-- 异常生物收容部 -->
+                <div class="bg-gray-900/80 border border-green-500/30 rounded-lg p-4 backdrop-blur-sm hover-lift">
+                    <h3 class="text-lg font-bold mb-3 text-blue-400 flex items-center"><i class="fas fa-cube mr-2"></i> 异常生物收容部</h3>
+                    <p class="text-gray-300 text-sm mb-3">负责异常生物实体的捕捉、分类、收容与管理，确保异常生物不会对人类社会和生态系统造成危害。</p>
+                    <div class="space-y-2 ml-4 mt-4">
+                        <div class="p-2 border border-blue-500/20 rounded-md bg-gray-900/50">
+                            <h4 class="text-sm font-medium text-blue-400">特殊收容小组</h4>
+                            <p class="text-xs text-blue-400/70 mt-1">执行高风险异常生物的捕捉与收容任务</p>
+                        </div>
+                        <div class="p-2 border border-blue-500/20 rounded-md bg-gray-900/50">
+                            <h4 class="text-sm font-medium text-blue-400">收容设施管理</h4>
+                            <p class="text-xs text-blue-400/70 mt-1">负责收容站点的日常运营与维护</p>
+                        </div>
+                        <div class="p-2 border border-blue-500/20 rounded-md bg-gray-900/50">
+                            <h4 class="text-sm font-medium text-blue-400">异常生物分类中心</h4>
+                            <p class="text-xs text-blue-400/70 mt-1">对新发现异常生物进行评估与分类</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 研究与开发部 -->
+                <div class="bg-gray-900/80 border border-green-500/30 rounded-lg p-4 backdrop-blur-sm hover-lift">
+                    <h3 class="text-lg font-bold mb-3 text-purple-400 flex items-center"><i class="fas fa-flask mr-2"></i> 研究与开发部</h3>
+                    <p class="text-gray-300 text-sm mb-3">负责异常生物特性研究、收容技术开发以及异常生物应用研究，为基金会提供技术支持。</p>
+                    <div class="space-y-2 ml-4 mt-4">
+                        <div class="p-2 border border-purple-500/20 rounded-md bg-gray-900/50">
+                            <h4 class="text-sm font-medium text-purple-400">异常生物学研究</h4>
+                            <p class="text-xs text-purple-400/70 mt-1">研究异常生物的生理结构与行为模式</p>
+                        </div>
+                        <div class="p-2 border border-purple-500/20 rounded-md bg-gray-900/50">
+                            <h4 class="text-sm font-medium text-purple-400">收容技术开发</h4>
+                            <p class="text-xs text-purple-400/70 mt-1">开发新型收容设备与方法</p>
+                        </div>
+                        <div class="p-2 border border-purple-500/20 rounded-md bg-gray-900/50">
+                            <h4 class="text-sm font-medium text-purple-400">异常能源研究</h4>
+                            <p class="text-xs text-purple-400/70 mt-1">研究异常生物产生的特殊能量</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 安全与战术部 -->
+                <div class="bg-gray-900/80 border border-green-500/30 rounded-lg p-4 backdrop-blur-sm hover-lift">
+                    <h3 class="text-lg font-bold mb-3 text-red-400 flex items-center"><i class="fas fa-shield-alt mr-2"></i> 安全与战术部</h3>
+                    <p class="text-gray-300 text-sm mb-3">负责基金会人员安全、设施安全以及应对异常生物突破收容的应急响应。</p>
+                    <div class="space-y-2 ml-4 mt-4">
+                        <div class="p-2 border border-red-500/20 rounded-md bg-gray-900/50">
+                            <h4 class="text-sm font-medium text-red-400">安全保卫队</h4>
+                            <p class="text-xs text-red-400/70 mt-1">负责各收容站点的安全守卫工作</p>
+                        </div>
+                        <div class="p-2 border border-red-500/20 rounded-md bg-gray-900/50">
+                            <h4 class="text-sm font-medium text-red-400">战术反应小组</h4>
+                            <p class="text-xs text-red-400/70 mt-1">应对异常生物突破收容的快速反应部队</p>
+                        </div>
+                        <div class="p-2 border border-red-500/20 rounded-md bg-gray-900/50">
+                            <h4 class="text-sm font-medium text-red-400">安全评估办公室</h4>
+                            <p class="text-xs text-red-400/70 mt-1">评估收容设施的安全风险</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 其他部门 -->
+                <div class="bg-gray-900/80 border border-green-500/30 rounded-lg p-4 backdrop-blur-sm hover-lift">
+                    <h3 class="text-lg font-bold mb-3 text-yellow-400 flex items-center"><i class="fas fa-building mr-2"></i> 行政与后勤保障部</h3>
+                    <p class="text-gray-300 text-sm mb-3">负责基金会的日常行政事务、人力资源管理以及后勤保障工作。</p>
+                    <div class="p-2 border border-yellow-500/20 rounded-md bg-gray-900/50 mb-2 ml-4">
+                        <h4 class="text-sm font-medium text-yellow-400">人力资源办公室</h4>
+                    </div>
+                    <div class="p-2 border border-yellow-500/20 rounded-md bg-gray-900/50 mb-2 ml-4">
+                        <h4 class="text-sm font-medium text-yellow-400">后勤保障中心</h4>
+                    </div>
+
+                    <h3 class="text-lg font-bold mt-4 mb-3 text-cyan-400 flex items-center"><i class="fas fa-info-circle mr-2"></i> 信息与情报部</h3>
+                    <p class="text-gray-300 text-sm mb-3">负责收集、分析异常生物相关情报，以及基金会内部信息管理与安全。</p>
+                    <div class="p-2 border border-cyan-500/20 rounded-md bg-gray-900/50 ml-4">
+                        <h4 class="text-sm font-medium text-cyan-400">情报收集中心</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 关键职位信息 -->
+            <div class="bg-gray-900/80 border border-green-500/30 rounded-lg p-6 backdrop-blur-sm tech-border">
+                <h2 class="text-lg font-bold mb-4 text-green-500 flex items-center"><i class="fas fa-user-tie mr-2"></i> 关键职位信息</h2>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-800">
+                        <thead>
+                            <tr>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-green-400 uppercase tracking-wider">职位名称</th>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-green-400 uppercase tracking-wider">部门</th>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-green-400 uppercase tracking-wider">职责描述</th>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-green-400 uppercase tracking-wider">权限等级</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-800">
+                            <tr class="hover:bg-gray-800/50 transition-colors">
+                                <td class="px-4 py-3 whitespace-nowrap text-sm text-white">收容部部长</td>
+                                <td class="px-4 py-3 whitespace-nowrap text-sm text-blue-400">异常生物收容部</td>
+                                <td class="px-4 py-3 text-sm text-gray-300">负责异常生物收容策略制定与实施</td>
+                                <td class="px-4 py-3 whitespace-nowrap text-sm text-green-400">4级</td>
+                            </tr>
+                            <tr class="hover:bg-gray-800/50 transition-colors">
+                                <td class="px-4 py-3 whitespace-nowrap text-sm text-white">首席研究员</td>
+                                <td class="px-4 py-3 whitespace-nowrap text-sm text-purple-400">研究与开发部</td>
+                                <td class="px-4 py-3 text-sm text-gray-300">领导异常生物特性研究工作</td>
+                                <td class="px-4 py-3 whitespace-nowrap text-sm text-green-400">4级</td>
+                            </tr>
+                            <tr class="hover:bg-gray-800/50 transition-colors">
+                                <td class="px-4 py-3 whitespace-nowrap text-sm text-white">安全主管</td>
+                                <td class="px-4 py-3 whitespace-nowrap text-sm text-red-400">安全与战术部</td>
+                                <td class="px-4 py-3 text-sm text-gray-300">负责基金会安全策略与应急响应</td>
+                                <td class="px-4 py-3 whitespace-nowrap text-sm text-green-400">4级</td>
+                            </tr>
+                            <tr class="hover:bg-gray-800/50 transition-colors">
+                                <td class="px-4 py-3 whitespace-nowrap text-sm text-white">O5议员</td>
+                                <td class="px-4 py-3 whitespace-nowrap text-sm text-yellow-400">O5议会</td>
+                                <td class="px-4 py-3 text-sm text-gray-300">基金会最高决策机构成员</td>
+                                <td class="px-4 py-3 whitespace-nowrap text-sm text-red-400">5级</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="py-8 border-t border-gray-800 bg-gray-900 mt-auto">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/20 border border-cyan-500/50">
+                        <i class="fas fa-shield-alt text-white text-sm"></i>
+                    </div>
+                    <span class="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">ECO基金会</span>
+                </div>
+                <div class="flex space-x-6 mb-4 md:mb-0">
+                    <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors"><i class="fab fa-github"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="text-gray-500 text-sm">
+                    &copy; 2023 ECO基金会. 保护人类与生态系统的安全.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
